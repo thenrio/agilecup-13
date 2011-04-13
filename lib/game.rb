@@ -33,7 +33,7 @@ class Game
   def start
     maze = Yajl::Parser.new.parse(instructions.body)
     puts "=============GET\n#{maze}"
-    solution = Maze.new.solve(maze)
+    solution = Maze.new.fake(maze)
     response = solve(solution)
     if(response['success'] == 'ok')
       self.question += 1
